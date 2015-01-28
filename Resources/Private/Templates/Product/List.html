@@ -1,0 +1,28 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1>Listing for Product</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_wtcartproduct" >
+	<tr>
+		<th><f:translate key="tx_wtcartproduct_domain_model_product.sku" /></th>
+		<th><f:translate key="tx_wtcartproduct_domain_model_product.title" /></th>
+		<th><f:translate key="tx_wtcartproduct_domain_model_product.teaser" /></th>
+		<th><f:translate key="tx_wtcartproduct_domain_model_product.description" /></th>
+		<th><f:translate key="tx_wtcartproduct_domain_model_product.price" /></th>
+	</tr>
+
+	<f:for each="{products}" as="product">
+		<tr>
+			<td><f:link.action action="show" arguments="{product : product}"> {product.sku}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}"> {product.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}"> {product.teaser}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}"> {product.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}"> {product.price}</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+</f:section>

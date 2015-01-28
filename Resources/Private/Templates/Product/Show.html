@@ -1,0 +1,32 @@
+{namespace wtcartproduct=Extcode\WtCartProduct\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+	<h1>{product.title}</h1>
+
+	<f:if condition="{product.headerImage}">
+		<f:image src="{product.headerImage.originalResource.originalFile.uid}" title="{product.headerImage.originalResource.title}" alt="{product.headerImage.originalResource.title}" width="200" />
+	</f:if>
+
+	<div>{product.teaser}</div>
+	<div>{product.description}</div>
+
+	<f:if condition="{product.productContent}">
+		<f:for each="{product.productContent}" as="content" iteration="iterator" >
+			<div id="content-{iterator.cycle}"  class="content-element">
+				<f:cObject typoscriptObjectPath="tt_content.{content.contentType}.20" data="<wtcartproduct:mapModelPropertiesToTableColumns class='Extcode\\WtCartProduct\\Domain\\Model\\TtContent' table='tt_content' data='{content}' />" />
+			</div>
+		</f:for>
+	</f:if>
+
+	<div class="wtcart_form">
+		<f:form pageUid="44">
+			<input type="hidden" value="{product.uid}" name="id">
+			<input type="text" value="1" name="qty">
+			<input type="submit" value="###WTCART_LL_FORM_SUBMIT###">
+		</f:form>
+	</div>
+
+<f:link.action action="list">Back to list</f:link.action><br />
+</f:section>

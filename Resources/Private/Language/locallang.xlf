@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-10-23T11:22:42Z" product-name="wt_cart_product">
+		<header/>
+		<body>
+			<trans-unit id="tx_wtcartproduct_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.sku">
+				<source>Sku</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.tax_class">
+				<source>Tax Class</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant_sets">
+				<source>Variant Set</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.variant_set1">
+				<source>Variant Set 1</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.variant_set2">
+				<source>Variant Set 2</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.variant_set3">
+				<source>Variant Set 3</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.variants">
+				<source>Variants</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.related_products">
+				<source>Related Products</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.stock">
+				<source>Stock</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset">
+				<source>Variant Set</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.sku">
+				<source>Sku</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant">
+				<source>Variant</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_taxclass">
+				<source>Tax Class</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_taxclass.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_taxclass.value">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_taxclass.calc">
+				<source>Calc</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset">
+				<source>Variant Set</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.sku">
+				<source>Sku</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant">
+				<source>Variant</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variantattributes">
+				<source>Variant Attribute</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_variantattribute">
+				<source>Variant Attribute</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantattribute.sku">
+				<source>Sku</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantattribute.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantattribute.description">
+				<source>Description</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_variant">
+				<source>Variant</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant.variant_attribute1">
+				<source>Variant Attribute 1</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant.variant_attribute2">
+				<source>Variant Attribute 2</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant.variant_attribute3">
+				<source>Variant Attribute 3</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant.stock">
+				<source>Stock</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_variant.price">
+				<source>Price</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

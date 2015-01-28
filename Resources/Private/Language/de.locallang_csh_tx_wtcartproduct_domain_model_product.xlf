@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-10-23T11:22:42Z" product-name="wt_cart_product">
+		<header/>
+		<body>
+			<trans-unit id="sku.description">
+				<target>SKU = Artikelnummer</target>
+			</trans-unit>
+			<trans-unit id="price_measure.description">
+				<target>Inhalt wird nicht verwendet, wenn das Produkt Varianten hat.</target>
+			</trans-unit>
+			<trans-unit id="price_measure_unit.description">
+				<target>Inhalt wird nicht verwendet, wenn das Produkt Varianten hat.</target>
+			</trans-unit>
+			<trans-unit id="base_price_measure.description">
+				<target>Dieses Feld muss ausgefüllt sein, wenn das Produkt selbst, oder die Varianten die Berechnung des Grundpreis erfordern.</target>
+			</trans-unit>
+			<trans-unit id="base_price_measure_unit.description">
+				<target>Dieses Feld muss ausgefüllt sein, wenn das Produkt selbst, oder die Varianten die Berechnung des Grundpreis erfordern.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

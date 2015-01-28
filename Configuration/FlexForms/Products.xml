@@ -1,0 +1,71 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Optionen</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>LLL:EXT:wt_cart_product/Resources/Private/Language/locallang_db.xlf:tx_wtcartproduct.plugin.products.action.switch</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:wt_cart_product/Resources/Private/Language/locallang_db.xlf:tx_wtcartproduct.plugin.products.action.product.list_and_show</numIndex>
+										<numIndex index="1">Product->list;Product->show</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:wt_cart_product/Resources/Private/Language/locallang_db.xlf:tx_wtcartproduct.plugin.products.action.product.teaser</numIndex>
+										<numIndex index="1">Product->teaser</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+
+					<settings.productUids>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:wt_cart_product/Resources/Private/Language/locallang_db.xlf:tx_wtcartproduct.plugin.products.action.product.teaser.select.product</label>
+							<displayCond>FIELD:switchableControllerActions:=:Product->teaser</displayCond>
+							<config>
+								<type>select</type>
+								<foreign_table>tx_wtcartproduct_domain_model_product</foreign_table>
+								<size>3</size>
+								<minitems>1</minitems>
+								<maxitems>3</maxitems>
+							</config>
+						</TCEforms>
+					</settings.productUids>
+
+					<settings.categoriesList>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Categories:</label>
+							<displayCond>FIELD:switchableControllerActions:=:Product->list;Product->show</displayCond>
+							<config>
+								<type>select</type>
+								<autoSizeMax>50</autoSizeMax>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
+								<maxitems>99</maxitems>
+								<renderMode>tree</renderMode>
+								<size>10</size>
+								<treeConfig>
+									<appearance>
+										<expandAll>1</expandAll>
+										<showHeader>1</showHeader>
+									</appearance>
+									<parentField>parent</parentField>
+								</treeConfig>
+							</config>
+						</TCEforms>
+					</settings.categoriesList>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

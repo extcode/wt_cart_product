@@ -1,0 +1,36 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:be.container addCssFile="{f:uri.resource(path:'Stylesheets/Backend/style.css')}" />
+
+	<h1>Listing for Product</h1>
+
+	<f:flashMessages renderMode="div" />
+
+	<table class="tx_wtcartorder typo3-dblist" >
+		<tr class="t3-row-header">
+			<th style="text-align: left;"><f:translate key="tx_wtcartproduct_domain_model_product.sku" /></th>
+			<th style="text-align: left;"><f:translate key="tx_wtcartproduct_domain_model_product.title" /></th>
+			<th style="width: 75px;"><f:translate key="tx_wtcartproduct_domain_model_product.stock" /></th>
+			<th style="width: 100px;"><f:translate key="tx_wtcartproduct_domain_model_product.price" /></th>
+		</tr>
+
+		<f:for each="{products}" as="product">
+			<tr class="db_list_normal">
+				<td><f:link.action action="show" arguments="{product : product}"> {product.sku}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{product : product}"> {product.title}</f:link.action></td>
+				<td style="text-align: right;">
+					{product.stock} <f:if condition="{product.variants}">(!)</f:if>
+				</td>
+				<td style="text-align: right;">
+					<f:format.currency currencySign="{settings.format.currency.currencySign}"
+									   decimalSeparator="{settings.format.currency.decimalSeparator}"
+									   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
+						{product.price}
+					</f:format.currency>
+				</td>
+			</tr>
+		</f:for>
+	</table>
+
+</f:section>

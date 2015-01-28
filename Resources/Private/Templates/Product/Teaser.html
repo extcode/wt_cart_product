@@ -1,0 +1,18 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:if condition="{products}">
+		<f:for each="{products}" as="product">
+			<h3>{product.title}</h3>
+
+			<f:if condition="{product.firstImage}">
+				<f:image src="{product.firstImage.originalResource.originalFile.uid}"
+						 title="{product.firstImage.originalResource.title}"
+						 alt="{product.firstImage.originalResource.title}"
+						 height="100" />
+			</f:if>
+
+			<div>{product.teaser}</div>
+		</f:for>
+	</f:if>
+</f:section>
