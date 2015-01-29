@@ -1,8 +1,6 @@
 <f:layout name="Default" />
 
-<f:section name="main">
-	<f:be.container addCssFile="{f:uri.resource(path:'Stylesheets/Backend/style.css')}" />
-
+<f:section name="content">
 	<h1>{variant.product.title} ({variant.product.sku})</h1>
 
 	<f:link.action controller="Variant" action="edit" arguments="{variant : variant}">edit</f:link.action>

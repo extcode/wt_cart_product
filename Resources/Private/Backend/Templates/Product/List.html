@@ -1,11 +1,11 @@
 <f:layout name="Default" />
 
-<f:section name="main">
-	<f:be.container addCssFile="{f:uri.resource(path:'Stylesheets/Backend/style.css')}" />
-
-	<h1>Listing for Product</h1>
+<f:section name="content">
+	<h1><f:translate key="tx_wtcartproduct.module.productController.listAction.header" /></h1>
 
 	<f:flashMessages renderMode="div" />
+
+	<f:render partial="Product/Filter" arguments="{piVars: piVars, action: 'list'}" />
 
 	<table class="tx_wtcartorder typo3-dblist" >
 		<tr class="t3-row-header">

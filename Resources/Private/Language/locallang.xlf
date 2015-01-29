@@ -3,6 +3,24 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-10-23T11:22:42Z" product-name="wt_cart_product">
 		<header/>
 		<body>
+			<trans-unit id="tx_wtcartproduct.module.productController.listAction.header">
+				<source>Product Listing</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct.module.productController.showAction.header">
+				<source>Product Show</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct.module.action.filter">
+				<source>Filter List</source>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct_domain_model_product.filter.sku">
+				<source>SKU</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.filter.title">
+				<source>Tilte</source>
+			</trans-unit>
+
 			<trans-unit id="tx_wtcartproduct_domain_model_product">
 				<source>Product</source>
 			</trans-unit>

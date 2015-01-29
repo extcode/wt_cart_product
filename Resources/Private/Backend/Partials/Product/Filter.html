@@ -1,0 +1,25 @@
+<div class="wtcartproduct_module_search">
+	<div class="wtcartproduct_module_search_inner">
+
+		<f:form action="{action}" name="filter" id="wtcartproduct_module_search">
+			<div>
+				<label for="searchStart">
+					<f:translate key="tx_wtcartproduct_domain_model_product.filter.sku" />:
+				</label>
+				<f:form.textfield property="sku" id="searchStart" value="{piVars.filter.sku}" />
+			</div>
+			<div>
+				<label for="searchEnd">
+					<f:translate key="tx_wtcartproduct_domain_model_product.filter.title" />:
+				</label>
+				<f:form.textfield property="title" id="searchEnd" value="{piVars.filter.title}" />
+			</div>
+			<div class="right">
+				<f:form.submit value="{f:translate(key: 'tx_wtcartproduct.module.action.filter')}" class="searchall_submit right"/>
+			</div>
+			<div class="clear"><!--&nbsp;--></div>
+
+		</f:form>
+
+	</div>
+</div>

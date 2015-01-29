@@ -32,6 +32,47 @@ namespace Extcode\WtCartProduct\Domain\Repository;
  */
 class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	/**
+	 * Finds objects filtered by $piVars['filter']
+	 *
+	 * @param array $piVars
+	 * @return Query Object
+	 */
+	public function findAll($piVars = array()) {
+		// settings
+		$query = $this->createQuery();
+
+		$constraints = array();
+
+		// filter
+		if ( isset($piVars['filter']) ) {
+			foreach ((array) $piVars['filter'] as $field => $value) {
+
+				if (empty($value)) {
+					continue;
+				}
+
+				switch ($field) {
+					case 'sku':
+						$constraints[] = $query->equals('sku', $value);
+						break;
+					case 'title':
+						$constraints[] = $query->like('title', '%' . $value . '%');
+				}
+			}
+		}
+
+		// create constraint
+		if (!empty($constraints)) {
+			$query->matching(
+				$query->logicalAnd($constraints)
+			);
+		}
+
+		$products = $query->execute();
+
+		return $products;
+	}
 
 	/**
 	 * Finds objects based on selected categories

@@ -100,8 +100,10 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
 			$products = $this->productRepository->findByCategories($categories);
 		} else {
-			$products = $this->productRepository->findAll();
+			$products = $this->productRepository->findAll( $this->piVars );
 		}
+
+		$this->view->assign('piVars', $this->piVars);
 		$this->view->assign('products', $products);
 	}
 
