@@ -28,17 +28,17 @@ namespace Extcode\WtCartProduct\Controller;
 	 ***************************************************************/
 
 /**
- * VariantSetController
+ * VariantAttributeController
  */
-class VariantSetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class VariantAttributeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * productRepository
 	 *
-	 * @var Extcode\WtCartProduct\Domain\Repository\VariantSetRepository
+	 * @var Extcode\WtCartProduct\Domain\Repository\VariantAttributeRepository
 	 * @inject
 	 */
-	protected $variantSetRepository;
+	protected $variantAttributeRepository;
 
 	/**
 	 * Persistence Manager
@@ -82,77 +82,75 @@ class VariantSetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	}
 
 	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction() {
-		$variantSets = $this->variantSetRepository->findAll( $this->piVars );
-
-		$this->view->assign('piVars', $this->piVars);
-		$this->view->assign('variantSets', $variantSets);
-	}
-
-	/**
-	 * action show
-	 *
-	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
-	 * @return void
-	 */
-	public function showAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet) {
-		$this->view->assign('variantSet', $variantSet);
-	}
-
-	/**
 	 * action new
 	 *
-	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $newVariantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $newVariantAttribute
 	 * @return void
 	 */
-	public function newAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $newVariantSet = NULL) {
-		$this->view->assign('newVariantSet', $newVariantSet);
+	public function newAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet,
+							  \Extcode\WtCartProduct\Domain\Model\VariantAttribute $newVariantAttribute = NULL) {
+		$this->view->assign('variantSet', $variantSet);
+		$this->view->assign('newVariantAttribute', $newVariantAttribute);
 	}
 
 	/**
 	 * action create
 	 *
-	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $newVariantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $newVariantAttribute
 	 * @return void
 	 */
-	public function createAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $newVariantSet) {
-		$this->variantSetRepository->add($newVariantSet);
-		$this->redirect('list');
+	public function createAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet,
+								 \Extcode\WtCartProduct\Domain\Model\VariantAttribute $newVariantAttribute) {
+		$this->variantAttributeRepository->add($newVariantAttribute);
+
+		$variantSet->addVariantAttribute($newVariantAttribute);
+		$newVariantAttribute->setVariantSet($variantSet);
+
+		$this->flashMessageContainer->add('created');
+
+		$this->redirect('show', 'VariantSet', NULL, array('variantSet' => $variantSet));
 	}
 
 	/**
 	 * action edit
 	 *
 	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute
 	 * @return void
 	 */
-	public function editAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet) {
+	public function editAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet,
+							   \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute) {
 		$this->view->assign('variantSet', $variantSet);
+		$this->view->assign('variantAttribute', $variantAttribute);
 	}
 
 	/**
 	 * action update
 	 *
 	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute
 	 * @return void
 	 */
-	public function updateAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet) {
-		$this->variantSetRepository->update($variantSet);
-		$this->redirect('list');
+	public function updateAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet,
+								 \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute) {
+		$this->variantAttributeRepository->update($variantAttribute);
+
+		$this->redirect('show', 'VariantSet', NULL, array('variantSet' => $variantSet));
 	}
 
 	/**
 	 * action delete
 	 *
 	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute
 	 * @return void
 	 */
-	public function deleteAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet) {
-		$this->variantSetRepository->remove($variantSet);
-		$this->redirect('list');
+	public function deleteAction(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet,
+								 \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute) {
+		$this->variantAttributeRepository->remove($variantAttribute);
+
+		$this->redirect('show', 'VariantSet', NULL, array('variantSet' => $variantSet));
 	}
 }

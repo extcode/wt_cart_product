@@ -3,36 +3,56 @@
 <f:section name="content">
 	<h1><f:translate key="tx_wtcartproduct.module.variantSetController.showAction.header" /></h1>
 
+	<div class="right btn">
+		<f:link.action action="edit" arguments="{variantSet : variantSet}">Edit</f:link.action>
+	</div>
+	<div class="clear"><!-- &nbsp --></div>
+
 	<table class="tx_contact typo3-dblist" >
 		<tr>
 			<th class="t3-row-header"><f:translate key="tx_wtcartproduct_domain_model_variantset.sku" /></th>
-			<td colspan="2">{variantSet.sku}</td>
+			<td colspan="3">{variantSet.sku}</td>
 		</tr>
 		<tr>
 			<th class="t3-row-header"><f:translate key="tx_wtcartproduct_domain_model_variantset.title" /></th>
-			<td colspan="2">{variantSet.title}</td>
+			<td colspan="3">{variantSet.title}</td>
 		</tr>
 		<f:if condition="{variantSet.description}">
 			<tr>
 				<th class="t3-row-header"><f:translate key="tx_wtcartproduct_domain_model_variantset.description" /></th>
-				<td colspan="2">{variantSet.description}</td>
+				<td colspan="3">{variantSet.description}</td>
 			</tr>
 		</f:if>
+	</table>
+
+	<div class="right btn">
+		<f:link.action controller="VariantAttribute" action="new" arguments="{variantSet : variantSet}">New</f:link.action>
+	</div>
+	<div class="clear"><!-- &nbsp --></div>
+	<table class="tx_contact typo3-dblist" >
+		<tr>
+			<th class="t3-row-header" colspan="4">
+				<f:translate key="tx_wtcartproduct_domain_model_variantset.variant_attributes" />
+			</th>
+		</tr>
+		<tr>
+			<th class="t3-row-header" style="text-align: left;">
+				<f:translate key="tx_wtcartproduct_domain_model_variantset.title" />
+			</th>
+			<th class="t3-row-header" style="text-align: left;">
+				<f:translate key="tx_wtcartproduct_domain_model_variantset.sku" />
+			</th>
+			<th class="t3-row-header" style="width: 150px;">&nbsp;</th>
+		</tr>
 		<f:if condition="{variantSet.variantAttributes}">
 			<f:for each="{variantSet.variantAttributes}" as="variantAttribute" iteration="variantAttributesIterator">
 				<tr>
-					<th class="t3-row-header">
-						<f:if condition="{variantAttributesIterator.isFirst}">
-							<f:then>
-								<f:translate key="tx_wtcartproduct_domain_model_variantset.variant_attributes" />
-							</f:then>
-							<f:else>
-								&nbsp;
-							</f:else>
-						</f:if>
-					</th>
-					<td>{variantAttribute.sku}</td>
 					<td>{variantAttribute.title}</td>
+					<td>{variantAttribute.sku}</td>
+					<td style="text-align: right;">
+						<f:link.action controller="VariantAttribute" action="edit" arguments="{variantSet : variantSet, variantAttribute : variantAttribute}">Edit</f:link.action> |
+						<f:link.action controller="VariantAttribute" action="delete" arguments="{variantSet : variantSet, variantAttribute : variantAttribute}">Delete</f:link.action>
+					</td>
 				</tr>
 			</f:for>
 		</f:if>

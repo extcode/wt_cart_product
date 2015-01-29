@@ -136,5 +136,11 @@ $GLOBALS['TCA']['tx_wtcartproduct_domain_model_variantattribute'] = array(
 			),
 		),
 
+		'variant_set' => array(
+			'config' => array(
+				'type' => 'passthrough',
+			),
+		),
+
 	),
 );

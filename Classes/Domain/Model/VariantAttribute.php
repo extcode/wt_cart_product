@@ -54,6 +54,13 @@ class VariantAttribute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description = '';
 
 	/**
+	 * variantSet
+	 *
+	 * @var \Extcode\WtCartProduct\Domain\Model\VariantSet
+	 */
+	protected $variantSet;
+
+	/**
 	 * Returns the sku
 	 *
 	 * @return string $sku
@@ -108,6 +115,25 @@ class VariantAttribute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
+	}
+
+	/**
+	 * Returns the Variant Set
+	 *
+	 * @return \Extcode\WtCartProduct\Domain\Model\VariantSet
+	 */
+	public function getVariantSet() {
+		return $this->variantSet;
+	}
+
+	/**
+	 * Sets the Variant Set
+	 *
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet
+	 * @return void
+	 */
+	public function setVariantSet(\Extcode\WtCartProduct\Domain\Model\VariantSet $variantSet) {
+		$this->variantSet = $variantSet;
 	}
 
 }

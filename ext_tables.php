@@ -18,9 +18,10 @@ if (TYPO3_MODE === 'BE' && !$confArr['disableBackendModule'] && !(TYPO3_REQUESTT
 		'productlist',
 		'',
 		array(
-			'Product' => 'list, show',
+			'Product' => 'list, show,',
 			'Variant' => 'list, show, edit, update',
-			'VariantSet' => 'list, show',
+			'VariantSet' => 'list, show, new, create, edit, update, delete',
+			'VariantAttribute' => 'list, show, new, create, edit, update, delete',
 		),
 		array(
 			'access' => 'user, group',

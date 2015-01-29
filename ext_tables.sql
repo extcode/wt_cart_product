@@ -115,7 +115,7 @@ CREATE TABLE tx_wtcartproduct_domain_model_variantattribute (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	variantset int(11) unsigned DEFAULT '0' NOT NULL,
+	variant_set int(11) unsigned DEFAULT '0' NOT NULL,
 
 	sku varchar(255) DEFAULT '' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
