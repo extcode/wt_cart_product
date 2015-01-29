@@ -1,0 +1,24 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+	<h1><f:translate key="tx_wtcartproduct.module.variantSetController.listAction.header" /></h1>
+
+	<f:flashMessages renderMode="div" />
+
+	<f:render partial="VariantSet/Filter" arguments="{piVars: piVars, action: 'list'}" />
+
+	<table class="tx_wtcartorder typo3-dblist" >
+		<tr class="t3-row-header">
+			<th style="text-align: left;"><f:translate key="tx_wtcartproduct_domain_model_product.sku" /></th>
+			<th style="text-align: left;"><f:translate key="tx_wtcartproduct_domain_model_product.title" /></th>
+		</tr>
+
+		<f:for each="{variantSets}" as="variantSet">
+			<tr class="db_list_normal">
+				<td><f:link.action action="show" arguments="{variantSet : variantSet}"> {variantSet.sku}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{variantSet : variantSet}"> {variantSet.title}</f:link.action></td>
+			</tr>
+		</f:for>
+	</table>
+
+</f:section>

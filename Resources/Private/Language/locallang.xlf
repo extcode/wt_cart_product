@@ -9,6 +9,12 @@
 			<trans-unit id="tx_wtcartproduct.module.productController.showAction.header">
 				<source>Product Show</source>
 			</trans-unit>
+			<trans-unit id="tx_wtcartproduct.module.variantSetController.listAction.header">
+				<source>Variant Set Listing</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct.module.variantSetController.showAction.header">
+				<source>Variant Set Show</source>
+			</trans-unit>
 
 			<trans-unit id="tx_wtcartproduct.module.action.filter">
 				<source>Filter List</source>
@@ -82,8 +88,8 @@
 			<trans-unit id="tx_wtcartproduct_domain_model_variantset.description">
 				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant">
-				<source>Variant</source>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant_attributes">
+				<source>Variant Attributes</source>
 			</trans-unit>
 
 			<trans-unit id="tx_wtcartproduct_domain_model_taxclass">

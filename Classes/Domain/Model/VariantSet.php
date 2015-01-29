@@ -54,6 +54,14 @@ class VariantSet extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description = '';
 
 	/**
+	 * variantAttributes
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Extcode\WtCartProduct\Domain\Model\VariantAttribute>
+	 * @cascade remove
+	 */
+	protected $variantAttributes = NULL;
+
+	/**
 	 * Returns the sku
 	 *
 	 * @return string $sku
@@ -108,6 +116,45 @@ class VariantSet extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
+	}
+
+	/**
+	 * Adds a VariantAttribute
+	 *
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute
+	 * @return void
+	 */
+	public function addVariantAttribute(\Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttribute) {
+		$this->variantAttributes->attach($variantAttribute);
+	}
+
+	/**
+	 * Removes a VariantAttribute
+	 *
+	 * @param \Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttributeToRemove
+	 * @return void
+	 */
+	public function removeVariantAttribute(\Extcode\WtCartProduct\Domain\Model\VariantAttribute $variantAttributeToRemove) {
+		$this->variantAttributes->detach($variantAttributeToRemove);
+	}
+
+	/**
+	 * Returns the VariantAttributes
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Extcode\WtCartProduct\Domain\Model\VariantAttribute> $variantAttribute
+	 */
+	public function getVariantAttributes() {
+		return $this->variantAttributes;
+	}
+
+	/**
+	 * Sets the VariantAttributes
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Extcode\WtCartProduct\Domain\Model\VariantAttribute> $variantAttributes
+	 * @return void
+	 */
+	public function setVariantAttributes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $variantAttributes) {
+		$this->variantAttributes = $variantAttributes;
 	}
 
 }

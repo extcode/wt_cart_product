@@ -4,10 +4,16 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_wtcartproduct.module.productController.listAction.header">
-				<target>Produktliste</target>
+				<target>Produkt - Liste</target>
 			</trans-unit>
 			<trans-unit id="tx_wtcartproduct.module.productController.showAction.header">
-				<target>Produktdetails</target>
+				<target>Produkt - Details</target>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct.module.variantSetController.listAction.header">
+				<target>Variantgruppen Liste</target>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct.module.variantSetController.showAction.header">
+				<target>Variantgruppen Details</target>
 			</trans-unit>
 
 			<trans-unit id="tx_wtcartproduct.module.action.filter">
@@ -75,8 +81,8 @@
 			<trans-unit id="tx_wtcartproduct_domain_model_variantset.description">
 				<target>Description</target>
 			</trans-unit>
-			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant">
-				<target>Variant</target>
+			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant_attributes">
+				<target>Variantattribute</target>
 			</trans-unit>
 
 			<trans-unit id="tx_wtcartproduct_domain_model_taxclass">
