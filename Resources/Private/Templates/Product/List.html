@@ -9,18 +9,32 @@
 	<tr>
 		<th><f:translate key="tx_wtcartproduct_domain_model_product.sku" /></th>
 		<th><f:translate key="tx_wtcartproduct_domain_model_product.title" /></th>
-		<th><f:translate key="tx_wtcartproduct_domain_model_product.teaser" /></th>
-		<th><f:translate key="tx_wtcartproduct_domain_model_product.description" /></th>
 		<th><f:translate key="tx_wtcartproduct_domain_model_product.price" /></th>
 	</tr>
 
 	<f:for each="{products}" as="product">
 		<tr>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.sku}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.teaser}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.price}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}">{product.sku}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{product : product}">{product.title}</f:link.action></td>
+			<td>
+				<f:if condition="{product.variants}">
+					<f:then>
+						<f:translate key="tx_wtcartproduct_domain_model_product.price.from" />:
+						<f:format.currency currencySign="{settings.format.currency.currencySign}"
+										   decimalSeparator="{settings.format.currency.decimalSeparator}"
+										   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
+							{product.minPrice}
+						</f:format.currency>
+					</f:then>
+					<f:else>
+						<f:format.currency currencySign="{settings.format.currency.currencySign}"
+										   decimalSeparator="{settings.format.currency.decimalSeparator}"
+										   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
+							{product.price}
+						</f:format.currency>
+					</f:else>
+				</f:if>
+			</td>
 		</tr>
 	</f:for>
 </table>

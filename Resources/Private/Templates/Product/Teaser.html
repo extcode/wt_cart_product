@@ -13,6 +13,10 @@
 			</f:if>
 
 			<div>{product.teaser}</div>
+
+			<f:if condition="{settings.main.cart.pid}">
+				<f:render partial="Product/CartForm" arguments="{product: product}" />
+			</f:if>
 		</f:for>
 	</f:if>
 </f:section>

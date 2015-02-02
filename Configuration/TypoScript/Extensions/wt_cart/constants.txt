@@ -1,0 +1,15 @@
+plugin.wtcart {
+  repository {
+    class = \Extcode\WtCartProduct\Domain\Repository\ProductRepository
+
+    variants {
+      repository {
+        class = \Extcode\WtCartProduct\Domain\Repository\VariantRepository
+      }
+    }
+  }
+
+  gpvar.puid = wtcartproduct_uid
+  gpvar.variants.1 = wtcartproduct_variant
+  gpvar.qty = wtcartproduct_qty
+}

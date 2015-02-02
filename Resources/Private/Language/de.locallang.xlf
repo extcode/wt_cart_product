@@ -38,6 +38,9 @@
 			<trans-unit id="tx_wtcartproduct_domain_model_product.price">
 				<target>Preis</target>
 			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.price.from">
+				<target>ab</target>
+			</trans-unit>
 			<trans-unit id="tx_wtcartproduct_domain_model_product.tax_class">
 				<target>Steuerklasse</target>
 			</trans-unit>
@@ -83,6 +86,10 @@
 			</trans-unit>
 			<trans-unit id="tx_wtcartproduct_domain_model_variantset.variant_attributes">
 				<target>Variantattribute</target>
+			</trans-unit>
+
+			<trans-unit id="tx_wtcartproduct.plugin.form.submit">
+				<target>in den Warenkorb</target>
 			</trans-unit>
 
 			<trans-unit id="tx_wtcartproduct_domain_model_taxclass">

@@ -98,32 +98,6 @@ class Variant extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the calculated SKU
-	 *
-	 * @return string
-	 */
-	public function getSku() {
-		$skuArray = array($this->getProduct()->getSku());
-
-		if ($this->getProduct()->getVariantSet1()) {
-			$skuArray[] = $this->getProduct()->getVariantSet1()->getSku();
-			$skuArray[] = $this->getVariantAttribute1()->getSku();
-		}
-
-		if ($this->getProduct()->getVariantSet2()) {
-			$skuArray[] = $this->getProduct()->getVariantSet2()->getSku();
-			$skuArray[] = $this->getVariantAttribute2()->getSku();
-		}
-
-		if ($this->getProduct()->getVariantSet3()) {
-			$skuArray[] = $this->getProduct()->getVariantSet3()->getSku();
-			$skuArray[] = $this->getVariantAttribute3()->getSku();
-		}
-
-		return join('-', $skuArray);
-	}
-
-	/**
 	 * Returns the Variant Attribute 1
 	 *
 	 * @return Tx_WtCartProduct_Domain_Model_VariantAttribute
@@ -273,6 +247,62 @@ class Variant extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setStock($stock) {
 		$this->stock = $stock;
+	}
+
+	/**
+	 * Returns the calculated SKU
+	 *
+	 * @return string
+	 */
+	public function getSku() {
+		$skuArray = array();
+
+		if ($this->getProduct()->getVariantSet1()) {
+			$skuArray[] = $this->getProduct()->getVariantSet1()->getSku();
+			$skuArray[] = $this->getVariantAttribute1()->getSku();
+		}
+
+		if ($this->getProduct()->getVariantSet2()) {
+			$skuArray[] = $this->getProduct()->getVariantSet2()->getSku();
+			$skuArray[] = $this->getVariantAttribute2()->getSku();
+		}
+
+		if ($this->getProduct()->getVariantSet3()) {
+			$skuArray[] = $this->getProduct()->getVariantSet3()->getSku();
+			$skuArray[] = $this->getVariantAttribute3()->getSku();
+		}
+
+		return join('-', $skuArray);
+	}
+
+	/**
+	 * Returns the calculated Title
+	 *
+	 * @return string
+	 */
+	public function getTitle() {
+		$titleArray = array();
+
+		if ($this->getProduct()->getVariantSet1()) {
+			$titleArray[] = $this->getVariantAttribute1()->getTitle();
+		}
+
+		if ($this->getProduct()->getVariantSet2()) {
+			$titleArray[] = $this->getVariantAttribute2()->getTitle();
+		}
+
+		if ($this->getProduct()->getVariantSet3()) {
+			$titleArray[] = $this->getVariantAttribute3()->getTitle();
+		}
+
+		return join(' ', $titleArray);
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getPriceCalcMethod() {
+		return 0;
 	}
 
 

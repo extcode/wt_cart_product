@@ -1,0 +1,12 @@
+plugin.tx_wtcart_pi1.db >
+
+plugin.tx_wtcart_pi1.repository {
+
+  class = {$plugin.wtcart.repository.class}
+
+  variants {
+    repository {
+      class = {$plugin.wtcart.repository.variants.repository.class}
+    }
+  }
+}

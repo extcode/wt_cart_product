@@ -20,13 +20,9 @@
 		</f:for>
 	</f:if>
 
-	<div class="wtcart_form">
-		<f:form pageUid="44">
-			<input type="hidden" value="{product.uid}" name="id">
-			<input type="text" value="1" name="qty">
-			<input type="submit" value="###WTCART_LL_FORM_SUBMIT###">
-		</f:form>
-	</div>
+	<f:if condition="{settings.main.cart.pid}">
+		<f:render partial="Product/CartForm" arguments="{product: product}" />
+	</f:if>
 
 <f:link.action action="list">Back to list</f:link.action><br />
 </f:section>

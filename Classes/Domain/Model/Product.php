@@ -171,7 +171,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
 	 */
-	protected $productCategories;
+	protected $productCategories = NULL;
 
 	/**
 	 * Returns the sku
@@ -413,7 +413,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the taxClass
 	 *
-	 * @return TaxClass $taxClass
+	 * @return \Extcode\WtCartProduct\Domain\Model\TaxClass $taxClass
 	 */
 	public function getTaxClass() {
 		return $this->taxClass;
@@ -422,7 +422,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the taxClass
 	 *
-	 * @param TaxClass $taxClass
+	 * @param \Extcode\WtCartProduct\Domain\Model\TaxClass $taxClass
 	 * @return void
 	 */
 	public function setTaxClass(TaxClass $taxClass) {
@@ -628,6 +628,30 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setProductCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $productCategories) {
 		$this->productCategories = $productCategories;
+	}
+
+
+	/**
+	 * get the minimal Price from Variants
+	 *
+	 * @return float
+	 */
+	public function getMinPrice() {
+		if ( $this->getVariants() ) {
+			foreach ( $this->getVariants() as $variant ) {
+				if (!isset($minPrice)) {
+					$minPrice = $variant->getPrice();
+				} else {
+					if ($variant->getPrice() < $minPrice) {
+						$minPrice = $variant->getPrice();
+					}
+				}
+			}
+		} else {
+			$minPrice = $this->getPrice();
+		}
+
+		return $minPrice;
 	}
 
 }

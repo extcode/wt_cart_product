@@ -1,0 +1,13 @@
+{namespace wtcartproduct=Extcode\WtCartProduct\ViewHelpers}
+
+<div class="wtcart_form">
+	<f:form pageUid="{settings.main.cart.pid}">
+		<input type="hidden" value="{product.uid}" name="wtcartproduct_uid">
+
+		<input type="text" value="1" name="wtcartproduct_qty">
+		<f:if condition="{product.variants}">
+			<wtcartproduct:form.variantSelect name="wtcartproduct_variant" product="{product}"/>
+		</f:if>
+		<input type="submit" value="<f:translate key='tx_wtcartproduct.plugin.form.submit' />">
+	</f:form>
+</div>

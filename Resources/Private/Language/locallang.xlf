@@ -20,6 +20,10 @@
 				<source>Filter List</source>
 			</trans-unit>
 
+			<trans-unit id="tx_wtcartproduct.plugin.form.submit">
+				<source>Add to cart</source>
+			</trans-unit>
+
 			<trans-unit id="tx_wtcartproduct_domain_model_product.filter.sku">
 				<source>SKU</source>
 			</trans-unit>
@@ -44,6 +48,9 @@
 			</trans-unit>
 			<trans-unit id="tx_wtcartproduct_domain_model_product.price">
 				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_wtcartproduct_domain_model_product.price.from">
+				<source>from</source>
 			</trans-unit>
 			<trans-unit id="tx_wtcartproduct_domain_model_product.tax_class">
 				<source>Tax Class</source>

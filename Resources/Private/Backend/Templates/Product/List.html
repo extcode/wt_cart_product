@@ -23,11 +23,23 @@
 					{product.stock} <f:if condition="{product.variants}">(!)</f:if>
 				</td>
 				<td style="text-align: right;">
-					<f:format.currency currencySign="{settings.format.currency.currencySign}"
-									   decimalSeparator="{settings.format.currency.decimalSeparator}"
-									   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
-						{product.price}
-					</f:format.currency>
+					<f:if condition="{product.variants}">
+						<f:then>
+							<f:translate key="tx_wtcartproduct_domain_model_product.price.from" />:
+							<f:format.currency currencySign="{settings.format.currency.currencySign}"
+											   decimalSeparator="{settings.format.currency.decimalSeparator}"
+											   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
+								{product.minPrice}
+							</f:format.currency>
+						</f:then>
+						<f:else>
+							<f:format.currency currencySign="{settings.format.currency.currencySign}"
+											   decimalSeparator="{settings.format.currency.decimalSeparator}"
+											   thousandsSeparator="{settings.format.currency.thousandsSeparator}">
+								{product.price}
+							</f:format.currency>
+						</f:else>
+					</f:if>
 				</td>
 			</tr>
 		</f:for>
