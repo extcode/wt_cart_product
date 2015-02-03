@@ -9,6 +9,10 @@ plugin.wtcart {
     }
   }
 
+  taxClassRepository {
+    class = \Extcode\WtCartProduct\Domain\Repository\TaxClassRepository
+  }
+
   gpvar.puid = wtcartproduct_uid
   gpvar.variants.1 = wtcartproduct_variant
   gpvar.qty = wtcartproduct_qty

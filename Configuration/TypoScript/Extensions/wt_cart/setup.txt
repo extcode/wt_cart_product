@@ -1,12 +1,21 @@
 plugin.tx_wtcart_pi1.db >
+plugin.tx_wtcart_pi1.taxclass >
 
-plugin.tx_wtcart_pi1.repository {
+plugin.tx_wtcart_pi1 {
 
-  class = {$plugin.wtcart.repository.class}
+  repository {
 
-  variants {
-    repository {
-      class = {$plugin.wtcart.repository.variants.repository.class}
+    class = {$plugin.wtcart.repository.class}
+
+    variants {
+      repository {
+        class = {$plugin.wtcart.repository.variants.repository.class}
+      }
     }
   }
+
+  taxClassRepository {
+    class = {$plugin.wtcart.taxClassRepository.class}
+  }
+
 }
