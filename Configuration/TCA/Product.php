@@ -271,7 +271,6 @@ $GLOBALS['TCA']['tx_wtcartproduct_domain_model_product'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_wtcartproduct_domain_model_taxclass',
-				'foreign_field' => 'product',
 				'minitems'      => 1,
 				'maxitems'      => 1,
 				'appearance' => array(

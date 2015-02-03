@@ -208,8 +208,6 @@ CREATE TABLE tx_wtcartproduct_domain_model_taxclass (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	product int(11) unsigned DEFAULT '0' NOT NULL,
-
 	title varchar(255) DEFAULT '' NOT NULL,
 	value varchar(255) DEFAULT '' NOT NULL,
 	calc double(11,2) DEFAULT '0.00' NOT NULL,
