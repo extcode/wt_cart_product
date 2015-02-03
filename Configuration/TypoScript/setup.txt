@@ -1,8 +1,14 @@
 module.tx_wtcartproduct {
 	view {
-		templateRootPath = {$module.tx_wtcartproduct.view.templateRootPath}
-		partialRootPath = {$module.tx_wtcartproduct.view.partialRootPath}
-		layoutRootPath = {$module.tx_wtcartproduct.view.layoutRootPath}
+		templateRootPaths {
+			100 = {$module.tx_wtcartproduct.view.templateRootPath}
+		}
+		partialRootPaths {
+			100 = {$module.tx_wtcartproduct.view.partialRootPath}
+		}
+		layoutRootPaths {
+			100 = {$module.tx_wtcartproduct.view.layoutRootPath}
+		}
 	}
 	persistence {
 		storagePid = {$module.tx_wtcartproduct.persistence.storagePid}
@@ -30,9 +36,15 @@ module.tx_wtcartproduct {
 
 plugin.tx_wtcartproduct {
 	view {
-		templateRootPath = {$plugin.tx_wtcartproduct.view.templateRootPath}
-		partialRootPath = {$plugin.tx_wtcartproduct.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_wtcartproduct.view.layoutRootPath}
+		templateRootPaths {
+			100 = {$plugin.tx_wtcartproduct.view.templateRootPath}
+		}
+		partialRootPaths {
+			100 = {$plugin.tx_wtcartproduct.view.partialRootPath}
+		}
+		layoutRootPaths {
+			100 = {$plugin.tx_wtcartproduct.view.layoutRootPath}
+		}
 	}
 	persistence {
 		storagePid = {$plugin.tx_wtcartproduct.persistence.storagePid}
@@ -54,6 +66,12 @@ plugin.tx_wtcartproduct {
 		headerImage {
 			maxHeight = 200
 			maxWidth = 200
+		}
+
+		wt_cart {
+			cart {
+				pid < plugin.tx_wtcart.settings.cart.pid
+			}
 		}
 	}
 }

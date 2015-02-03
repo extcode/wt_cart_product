@@ -14,7 +14,7 @@
 
 			<div>{product.teaser}</div>
 
-			<f:if condition="{settings.main.cart.pid}">
+			<f:if condition="{settings.wt_cart.cart.pid}">
 				<f:render partial="Product/CartForm" arguments="{product: product}" />
 			</f:if>
 		</f:for>
