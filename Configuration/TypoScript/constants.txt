@@ -1,49 +1,49 @@
 module.tx_wtcartproduct {
-	view {
-		templateRootPath = EXT:wt_cart_product/Resources/Private/Backend/Templates/
-		partialRootPath = EXT:wt_cart_product/Resources/Private/Backend/Partials/
-		layoutRootPath = EXT:wt_cart_product/Resources/Private/Backend/Layouts/
-	}
-	persistence {
-		# cat=plugin.tx_wtcartproduct//a; type=string; label=Default storage PID
-		storagePid =
-	}
+  view {
+    templateRootPath = EXT:wt_cart_product/Resources/Private/Backend/Templates/
+    partialRootPath = EXT:wt_cart_product/Resources/Private/Backend/Partials/
+    layoutRootPath = EXT:wt_cart_product/Resources/Private/Backend/Layouts/
+  }
+  persistence {
+    # cat=plugin.tx_wtcartproduct//a; type=string; label=Default storage PID
+    storagePid =
+  }
 
-	settings {
-		format {
-			currency {
-				currencySign = €
-				decimalSeparator = ,
-				thousandsSeparator = .
-			}
-		}
+  settings {
+    format {
+      currency {
+        currencySign = €
+        decimalSeparator = ,
+        thousandsSeparator = .
+      }
+    }
 
-		headerImage {
-			maxHeight = 200
-			maxWidth = 200
-		}
-	}
+    headerImage {
+      maxHeight = 200
+      maxWidth = 200
+    }
+  }
 
 }
 
 plugin.tx_wtcartproduct {
-	view {
-		templateRootPath = EXT:wt_cart_product/Resources/Private/Templates/
-		partialRootPath = EXT:wt_cart_product/Resources/Private/Partials/
-		layoutRootPath = EXT:wt_cart_product/Resources/Private/Layouts/
-	}
-	persistence {
-		# cat=plugin.tx_wtcartproduct//a; type=string; label=Default storage PID
-		storagePid =
-	}
+  view {
+    templateRootPath = EXT:wt_cart_product/Resources/Private/Templates/
+    partialRootPath = EXT:wt_cart_product/Resources/Private/Partials/
+    layoutRootPath = EXT:wt_cart_product/Resources/Private/Layouts/
+  }
+  persistence {
+    # cat=plugin.tx_wtcartproduct//a; type=string; label=Default storage PID
+    storagePid =
+  }
 
-	settings {
-		format {
-			currency {
-				currencySign = €
-				decimalSeparator = ,
-				thousandsSeparator = .
-			}
-		}
-	}
+  settings {
+    format {
+      currency {
+        currencySign = €
+        decimalSeparator = ,
+        thousandsSeparator = .
+      }
+    }
+  }
 }

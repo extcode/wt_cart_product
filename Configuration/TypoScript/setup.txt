@@ -1,134 +1,100 @@
 module.tx_wtcartproduct {
-	view {
-		templateRootPaths {
-			100 = {$module.tx_wtcartproduct.view.templateRootPath}
-		}
-		partialRootPaths {
-			100 = {$module.tx_wtcartproduct.view.partialRootPath}
-		}
-		layoutRootPaths {
-			100 = {$module.tx_wtcartproduct.view.layoutRootPath}
-		}
-	}
-	persistence {
-		storagePid = {$module.tx_wtcartproduct.persistence.storagePid}
-	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		# rewrittenPropertyMapper = 1
-	}
-
-	settings {
-		format {
-			currency {
-				currencySign = {$plugin.wtcart.main.currencySymbol}
-				decimalSeparator = {$plugin.wtcart.main.dec_point}
-				thousandsSeparator = {$plugin.wtcart.main.thousands_sep}
-			}
-		}
-
-		headerImage {
-			maxHeight = 200
-			maxWidth = 200
-		}
-	}
+  view {
+    templateRootPaths {
+      100 = {$module.tx_wtcartproduct.view.templateRootPath}
+    }
+    partialRootPaths {
+      100 = {$module.tx_wtcartproduct.view.partialRootPath}
+    }
+    layoutRootPaths {
+      100 = {$module.tx_wtcartproduct.view.layoutRootPath}
+    }
+  }
+  persistence {
+    storagePid = {$module.tx_wtcartproduct.persistence.storagePid}
+  }
+  features {
+    # uncomment the following line to enable the new Property Mapper.
+    # rewrittenPropertyMapper = 1
+  }
+  
+  settings {
+    format {
+      currency {
+        currencySign = {$plugin.wtcart.main.currencySymbol}
+        decimalSeparator = {$plugin.wtcart.main.dec_point}
+        thousandsSeparator = {$plugin.wtcart.main.thousands_sep}
+      }
+    }
+  
+    headerImage {
+      maxHeight = 200
+      maxWidth = 200
+    }
+  }
 }
 
 plugin.tx_wtcartproduct {
-	view {
-		templateRootPaths {
-			100 = {$plugin.tx_wtcartproduct.view.templateRootPath}
-		}
-		partialRootPaths {
-			100 = {$plugin.tx_wtcartproduct.view.partialRootPath}
-		}
-		layoutRootPaths {
-			100 = {$plugin.tx_wtcartproduct.view.layoutRootPath}
-		}
-	}
-	persistence {
-		storagePid = {$plugin.tx_wtcartproduct.persistence.storagePid}
-	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		# rewrittenPropertyMapper = 1
-	}
+  view {
+    templateRootPaths {
+      100 = {$plugin.tx_wtcartproduct.view.templateRootPath}
+    }
+    partialRootPaths {
+      100 = {$plugin.tx_wtcartproduct.view.partialRootPath}
+    }
+    layoutRootPaths {
+      100 = {$plugin.tx_wtcartproduct.view.layoutRootPath}
+    }
+  }
+  persistence {
+    storagePid = {$plugin.tx_wtcartproduct.persistence.storagePid}
+  }
+  features {
+    # uncomment the following line to enable the new Property Mapper.
+    # rewrittenPropertyMapper = 1
+  }
 
-	settings {
-		format {
-			currency {
-				currencySign = {$plugin.wtcart.main.currencySymbol}
-				decimalSeparator = {$plugin.wtcart.main.dec_point}
-				thousandsSeparator = {$plugin.wtcart.main.thousands_sep}
-			}
-		}
+  settings {
+    format {
+      currency {
+        currencySign = {$plugin.wtcart.main.currencySymbol}
+        decimalSeparator = {$plugin.wtcart.main.dec_point}
+        thousandsSeparator = {$plugin.wtcart.main.thousands_sep}
+      }
+    }
 
-		headerImage {
-			maxHeight = 200
-			maxWidth = 200
-		}
+    headerImage {
+      maxHeight = 200
+      maxWidth = 200
+    }
 
-		wt_cart {
-			cart {
-				pid < plugin.tx_wtcart.settings.cart.pid
-			}
-		}
-	}
+    wt_cart {
+      cart {
+        pid < plugin.tx_wtcart.settings.cart.pid
+      }
+    }
+  }
 }
 
 config.tx_extbase {
-	objects {
-		TYPO3\CMS\Extbase\Domain\Model\Category {
-			className = Extcode\WtCartProduct\Domain\Model\Category
-		}
-		TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
-			className = Extcode\WtCartProduct\Domain\Repository\CategoryRepository
-		}
-	}
+  objects {
+    TYPO3\CMS\Extbase\Domain\Model\Category {
+      className = Extcode\WtCartProduct\Domain\Model\Category
+    }
+    TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
+      className = Extcode\WtCartProduct\Domain\Repository\CategoryRepository
+    }
+  }
 }
 
 plugin.tx_wtcartproduct {
-	persistence {
-		classes {
-			Extcode\WtCartProduct\Domain\Model\Category {
-				mapping {
-					tableName = sys_category
-				}
-			}
-		}
-	}
+  persistence {
+    classes {
+      Extcode\WtCartProduct\Domain\Model\Category {
+        mapping {
+          tableName = sys_category
+        }
+      }
+    }
+  }
 }
-
-plugin.tx_wtcartproduct._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-wt-cart-product table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-wt-cart-product table th {
-		font-weight:bold;
-	}
-
-	.tx-wt-cart-product table td {
-		vertical-align:top;
-	}
-
-	.typo3-messages .message-error {
-		color:red;
-	}
-
-	.typo3-messages .message-ok {
-		color:green;
-	}
-
-)
